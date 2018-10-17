@@ -4,20 +4,18 @@ class Albums extends React.Component {
 
     constructor(props) {
         super(props);
-        console.log("Albums Prop", props.albums)
+        console.log("Albums Prop", props)
     }  
 
     render() {
         return (
-            this.props.albums.map((album) => (
-            <div key={album.id}>
-                <div className='albums__item' style={{backgroundImage: `url('./app/assets/album1.jpg')`}}></div>
+            <div className='col-md-2 col-sm-4 col-6'>
+                <div className='albums__item' style={{backgroundImage: `url('./app/assets/${this.props.albumCover}')`}}></div>
                 <div className="albums__description">
-                    <h3 className="heading-tertiary">{album.title}</h3>
-                    <p className="paragraph">Album name</p>
+                    <h3 className="heading-tertiary">{this.props.title}</h3>
+                    <p className="paragraph">{this.props.artist}</p>
                 </div>
             </div>
-            ))
         );
     }
 }
