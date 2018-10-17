@@ -5,7 +5,6 @@ class Collections extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(props);
   }  
 
   render() {
@@ -16,10 +15,17 @@ class Collections extends React.Component {
         </div>
         <div className='row'>
           {this.props.albums.map((album, index) => (
-            <Albums key={album.id} 
+            <Albums 
+              key={album.id} 
+              id={album.id}
+              artistPic={album.artistPic}
+              artist={album.artist}
               albumCover={album.albumCover} 
               title={album.title} 
-              artist={album.artist} />
+              producer={album.producer}
+              date={album.date}
+              bio={album.bio}
+              history={this.props.history} />
           ))}
         </div>
       </div> 
