@@ -1,0 +1,27 @@
+.btn-login{
+    &,
+    &:link,
+    &:visited {
+        padding: 5px 20px;
+        border-radius: 15px;
+        background-color: $color-white;
+        border-color: $color-white;
+        color: $color-primary;
+        text-transform: uppercase;
+        font-weight: 600;
+        transition: all .2s;
+
+        @media only screen and (max-width: 400px) {
+            padding: 5px 8px;
+        } 
+    }
+
+    &:hover {
+        color: $color-white;
+        background-color: $color-primary;
+        border-color: $color-primary;
+        cursor: pointer;
+    }
+}
+
+

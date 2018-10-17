@@ -1,0 +1,69 @@
+.details {
+
+    &__artist {
+        margin-top: 2rem;
+
+        @media only screen and (max-width: $bp-sm) {
+            display: none;
+        }
+
+    }
+
+    &__artist-pic {
+        height: 350px;
+        background-image: linear-gradient(to right bottom,
+                          rgba(29,185,84, 0.8),
+                          rgba(66,64,64, 0.8));
+        background-size: cover;
+        background-position: center;
+    }
+
+    &__album-pic-container {
+        display: flex;
+        justify-content: center;
+        @media only screen and (min-width: $bp-sm) {
+            justify-content: flex-start;
+            margin-left: 5%;
+            margin-top: -20%;
+        }
+
+    }
+
+    &__album-pic {
+        width: 250px;
+        height: 250px;
+        margin: 2rem 0;
+        border-radius: 3px;
+        border: 2px solid $color-primary;
+        background-size: cover;
+
+        @media only screen and (min-width: $bp-sm) {
+            border: 2px solid $color-white;
+        }  
+    }
+
+    &__info {
+        margin-top: 2rem;
+    }
+
+    &__info-album {
+        position: relative;
+        padding: 0;
+    }
+
+    &__info-album-heading {
+        @include green-border;
+        margin-bottom: 2rem;
+    }
+
+
+    &__info-artist {
+        position: relative;
+        padding: 0;
+        margin-top: 2rem;
+        @media only screen and (min-width: $bp-sm) {
+            max-width: 60%;
+        } 
+    }
+
+}

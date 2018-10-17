@@ -1,4 +1,4 @@
-# Personal React Boilerplate
+# Ubiwhere-Challenge
 
 ## Build Setup
 

@@ -1,0 +1,68 @@
+.header {
+    padding: 2rem 0;
+    border-bottom: 2px solid $color-primary;
+
+    &__title {
+        display: flex;
+        @media only screen and (max-width: $bp-sm) {
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+    }
+
+    &__title-span {
+        font-weight: bold;
+        color: $color-primary;
+    }
+
+    &__form {
+        display: flex;
+        @media only screen and (max-width: $bp-sm) {
+            justify-content: center;
+        }
+        @media only screen and (min-width: $bp-sm) {
+            justify-content: flex-end;
+        }
+    }
+
+    &__form-group {
+        @media only screen and (max-width: $bp-sm) {
+            justify-content: center;
+        }
+    }
+
+    &__form-group-input {
+        margin-right: .5rem;
+        background: transparent;
+        @media only screen and (max-width: $bp-sm) {
+            width: 85% !important;
+            margin-bottom: 1rem;
+            margin-right: 0;
+        }
+        
+        &::placeholder {
+            color: $color-white;
+        }
+
+        &:focus {
+            color: $color-white;
+            background-color:transparent;
+            border-color: $color-primary;
+            box-shadow: none;
+            outline: none;
+        }
+
+    }
+
+    &__form-greet {
+        margin: 0 2rem;
+    }
+
+    &__form-group-btn {
+
+        @media only screen and (max-width: $bp-sm) {
+            width: 35%;
+        }
+
+    }
+}

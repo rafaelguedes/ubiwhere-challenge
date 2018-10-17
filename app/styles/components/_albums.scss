@@ -1,0 +1,26 @@
+.albums {
+
+    &__heading {
+        position: relative;
+        margin: 2rem 0;
+        @include green-border;
+    }
+
+    &__item {
+        position: relative;
+        padding-bottom: 100%;
+        background-size: cover;
+        background-position: top;
+        border-radius: 3px
+    }
+
+    &__item-favorite {
+        position: absolute;
+        top: 5px;
+        left: 20px;
+    }
+
+    &__description {
+        margin: 1rem 0;
+    }
+}

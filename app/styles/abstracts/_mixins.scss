@@ -1,0 +1,13 @@
+@mixin green-border {
+    &::after{
+        content: "";
+        height: 2px;
+        background-color: $color-primary;
+        width: 30px;
+        position: absolute;
+        display: block;
+        left: 0;
+        top: 30px;
+        bottom: 0;
+    }
+}
