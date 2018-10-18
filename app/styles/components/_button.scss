@@ -22,6 +22,11 @@
         border-color: $color-primary;
         cursor: pointer;
     }
+
+    &:focus {
+        outline: none;
+        background-color: $color-primary !important;
+    }
 }
 
 

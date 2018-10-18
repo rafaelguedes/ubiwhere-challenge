@@ -13,10 +13,10 @@ class Home extends React.Component {
   }
 
   componentDidMount() {
-    this.queryForAlbumCollection();
+    this.askForAlbumCollection();
   }
 
-  queryForAlbumCollection = async() => {
+  askForAlbumCollection = async() => {
     const collections = await getAlbumCollections();
     this.setState(() => ({ collections }))
   }

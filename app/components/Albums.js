@@ -25,8 +25,11 @@ class Albums extends React.Component {
 
     render() {
         return (
-            <div onClick={this.handleClick} className='col-md-2 col-sm-4 col-6'>
+            <div className='col-md-2 col-sm-4 col-6' onClick={this.handleClick}>
                 <div className='albums__item' style={{backgroundImage: `url('./app/assets/${this.props.albumCover}')`}}></div>
+                <div class="albums__item-favorite">
+                    <img src="./app/assets/star.svg"></img>
+                </div>
                 <div className="albums__description">
                     <h3 className="heading-tertiary">{this.props.title}</h3>
                     <p className="paragraph">{this.props.artist}</p>

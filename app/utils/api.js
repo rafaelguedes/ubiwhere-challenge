@@ -10,3 +10,24 @@ export async function getAlbumCollections() {
     const collections = await response.json();
     return collections;
 }
+
+export async function getUsers() {
+    const response = await fetch(`http://localhost:8080/api/users`)
+        .catch(handleError);
+    
+    const users = await response.json();
+    return users;
+}
+
+export async function postUser(username, email) {
+
+    const response = await fetch('http://localhost:8080/api/users', { 
+        method: 'POST', 
+        body: JSON.stringify({ username, email }), 
+        headers: {'Content-Type': 'application/json'}
+      }).catch(handleError);
+
+    
+    return response;
+
+}
