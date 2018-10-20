@@ -5,17 +5,15 @@ class Detail extends React.Component {
 
   constructor(props) {
     super(props);
-    //this.props.location.state; 
   }  
 
   render() {
-    console.log(this.props)
     return (
       <div className='container'>
         <Header />
         <main className='details'>
           <div className="details__artist row no-gutters">
-            <div class="details__artist-pic col-12" 
+            <div className="details__artist-pic col-12" 
               style={{backgroundImage: `linear-gradient(to right bottom, rgba(29, 185, 84, 0.8), rgba(66, 64, 64, 0.8)),url("../app/assets/${this.props.location.state.artistPic}")`}}>
             </div>
           </div>

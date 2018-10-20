@@ -5,7 +5,7 @@ class Albums extends React.Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
-    }  
+    }
 
     handleClick() {
         const id = this.props.id;
@@ -27,8 +27,10 @@ class Albums extends React.Component {
         return (
             <div className='col-md-2 col-sm-4 col-6' onClick={this.handleClick}>
                 <div className='albums__item' style={{backgroundImage: `url('./app/assets/${this.props.albumCover}')`}}></div>
-                <div class="albums__item-favorite">
-                    <img src="./app/assets/star.svg"></img>
+                <div className="albums__item-favorite" style={{display: this.props.renderFavorites ? 'block' : 'none' }}>
+                    {this.props.isFavorite 
+                        ? <img src="./app/assets/star-filled.svg"></img> 
+                        : <img src="./app/assets/star.svg"></img>}
                 </div>
                 <div className="albums__description">
                     <h3 className="heading-tertiary">{this.props.title}</h3>

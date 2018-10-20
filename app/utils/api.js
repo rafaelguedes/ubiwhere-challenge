@@ -31,3 +31,11 @@ export async function postUser(username, email) {
     return response;
 
 }
+
+export async function getUserFavorites(id) {
+    const response = await fetch(`http://localhost:8080/api/users/${id}/musics`)
+        .catch(handleError);
+    
+    const userfavorites = await response.json();
+    return userfavorites;
+}
