@@ -33,6 +33,7 @@ class Collections extends React.Component {
               history={this.props.history}
               renderFavorites={this.props.userLoggedId ? true : false} 
               isFavorite={this.isFavorite(album.id) ? true : false}
+              userLoggedId={this.props.userLoggedId}
               />
           ))}
         </div>

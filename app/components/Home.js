@@ -32,7 +32,9 @@ class Home extends React.Component {
   askForUserFavorites = async(id) => {
     const userFavorites = await getUserFavorites(id);
     this.setState((state) => ({ userFavorites: userFavorites }));
-}
+  }
+
+  
 
   render() {
     return (

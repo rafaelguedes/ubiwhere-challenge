@@ -39,3 +39,28 @@ export async function getUserFavorites(id) {
     const userfavorites = await response.json();
     return userfavorites;
 }
+
+export async function postFavorite(id, musicid) {
+
+    const response = await fetch(`http://localhost:8080/api/users/${id}/musics`, { 
+        method: 'POST', 
+        body: JSON.stringify({ musicid }), 
+        headers: {'Content-Type': 'application/json'}
+      }).catch(handleError);
+
+    return response;
+
+}
+
+
+export async function deleteFavorite(id, musicid) {
+
+    const response = await fetch(`http://localhost:8080/api/users/${id}/musics/${musicid}`, { 
+        method: 'DELETE', 
+      }).catch(handleError);
+
+    
+    return response;
+
+}
+
