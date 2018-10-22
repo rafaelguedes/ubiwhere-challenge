@@ -22,7 +22,10 @@ body {
     @media only screen and (max-width: 930px) and (min-width: $bp-sm) {
         font-size: 1.3rem;
     }
+}
 
+.heading-not-found {
+    color: $color-white;
 }
 
 .paragraph {
