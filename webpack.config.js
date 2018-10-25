@@ -5,7 +5,7 @@ var webpack = require('webpack');
 var config = {
   entry: ['babel-polyfill', 'whatwg-fetch', './app/index.js'],
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/assets'),
     filename: 'index_bundle.js',
     publicPath: '/'
   },
@@ -17,6 +17,9 @@ var config = {
   },
   devServer: {
     historyApiFallback: true,
+    proxy: {
+      '/api': 'http://localhost:8080'
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({

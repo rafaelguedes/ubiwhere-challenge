@@ -4,7 +4,7 @@
   "description": "Ubiwhere challenge: React App that displays information about music",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js",
+    "start": "node index.js",
     "client": "webpack-dev-server --open",
     "build": "NODE_ENV='production' webpack -p",
     "heroku-postbuild": "npm install && npm run build"

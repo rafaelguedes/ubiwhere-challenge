@@ -3,6 +3,7 @@ var app = express();
 
 var cors = require("cors");
 var _ = require("lodash");
+var path = require('path');
 
 var data = require("./data.js");
 var bodyParser = require("body-parser");
@@ -267,6 +268,18 @@ router.delete("/users/:userid/musics/:musicid", function(req, res) {
 // REGISTER OUR ROUTES -------------------------------
 // all of our routes will be prefixed with /api
 app.use("/api", router);
+
+app.use(express.static(path.join(__dirname, '/dist/assets')));
+app.use(express.static(path.join(__dirname, '/assets')));
+
+console.log("\n\n");
+console.log(path.join(__dirname, '/dist/assets'))
+console.log("\n\n");
+
+app.get('*', (req, res) =>{
+    res.sendFile(path.join(__dirname+'/dist/assets/index.html'));
+    //res.sendFile(path.join(__dirname+'/dist/index.html'));
+});
 
 // START THE SERVER
 // =============================================================================
