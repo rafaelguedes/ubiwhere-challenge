@@ -55,7 +55,7 @@ export async function postFavorite(id, musicid) {
 
 export async function deleteFavorite(id, musicid) {
 
-    const response = await fetch(`http://localhost:8080/api/users/${id}/musics/${musicid}`, { 
+    const response = await fetch(`${basePath}/users/${id}/musics/${musicid}`, { 
         method: 'DELETE', 
       }).catch(handleError);
 

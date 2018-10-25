@@ -34,7 +34,7 @@ var data = {
             "date": "April 1994",
             "producer": "Faith N, Mc Serch et al",
             "bio": "East Coast rapper Nas made it big with albums such as Illmatic, It Was Written and Stillmatic. East Coast rapper Nas made it big with albums such as Illmatic, It Was Written and Stillmatic.",
-            "albumCover": "IllMatic.png",
+            "albumCover": "Illmatic.png",
             "artistPic": "NAS.png"
         }, {
             "id": 4,
