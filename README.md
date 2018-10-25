@@ -7,7 +7,7 @@
 npm install
 
 # start the web api
-npm run client
+npm start
 
 # serve with hot reload at localhost:8080
 npm run client
