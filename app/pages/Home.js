@@ -34,7 +34,6 @@ class Home extends React.Component {
   // Asks for user's 'favorites'
   askForUserFavorites = async(id) => {
     const userFavorites = await getUserFavorites(id);
-    console.log(userFavorites);
     this.setState(() => ({ userFavorites }));
   }
 

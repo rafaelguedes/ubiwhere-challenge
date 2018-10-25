@@ -26,7 +26,7 @@ class Collections extends React.Component {
     if(this.props !== prevProps) {
         this.setState(() => ({ userFavorites: this.props.userFavorites, userLoggedId: this.props.userLoggedId }));
     }
-    // Set the local storage whenever state updates (persisting state when routes changes or page reloads)
+    // Set the local storage whenever state updates (persisting state when route changes or page reloads)
     window.localStorage.setItem('albumsStore', JSON.stringify(this.state));
   }
 

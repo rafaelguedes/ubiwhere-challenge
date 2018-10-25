@@ -37,19 +37,18 @@ export async function getUserFavorites(id) {
     const response = await fetch(`${basePath}/users/${id}/musics`)
         .catch(handleError);
     
-    const userfavorites = await response;
+    const userfavorites = await response.json();
     return userfavorites;
 }
 
 export async function postFavorite(id, musicid) {
-    console.log("Api" , id);
     const response = await fetch(`${basePath}/users/${id}/musics`, { 
         method: 'POST', 
         body: JSON.stringify({ musicid }), 
         headers: {'Content-Type': 'application/json'}
       }).catch(handleError);
 
-    return response
+    return response;
 
 }
 
