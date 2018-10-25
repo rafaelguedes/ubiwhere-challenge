@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from './Header';
-import Collections from './Collections';
+import Header from '../components/Header';
+import Collections from '../components/Collections';
 import { getAlbumCollections, getUserFavorites } from '../utils/api';
 
 class Home extends React.Component {
@@ -18,28 +18,30 @@ class Home extends React.Component {
     this.askForAlbumCollection();
   }
 
+  // Asks for the Album Collections: all the musics
   askForAlbumCollection = async() => {
     const collections = await getAlbumCollections();
     this.setState(() => ({ collections }))
   }
 
+  // User is logged in - callback
+  // If user is logged in: ask for his 'favorites'
   userLooged(id) {
     this.setState(() => ({ userLoggedId: id }));
-    //User is logged in: ask for the his 'favorites'
     this.askForUserFavorites(this.state.userLoggedId);
   }
-
+  
+  // Asks for user's 'favorites'
   askForUserFavorites = async(id) => {
     const userFavorites = await getUserFavorites(id);
-    this.setState((state) => ({ userFavorites: userFavorites }));
+    console.log(userFavorites);
+    this.setState(() => ({ userFavorites }));
   }
-
-  
 
   render() {
     return (
       <div className='container'>
-        <Header callback={this.userLooged.bind(this)}/>
+        <Header renderLoginForm={true} callback={this.userLooged.bind(this)}/>
         <main className='albums'>
           {this.state.collections ? 
             this.state.collections.map((collection, index) => (

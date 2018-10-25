@@ -1,10 +1,12 @@
+const basePath = 'http://localhost:8080/api';
+
 function handleError(error) {
     console.warn(error);
     return null;
 }
 
 export async function getAlbumCollections() {
-    const response = await fetch(`http://localhost:8080/api/musics`)
+    const response = await fetch(`${basePath}/musics`)
         .catch(handleError);
     
     const collections = await response.json();
@@ -12,7 +14,7 @@ export async function getAlbumCollections() {
 }
 
 export async function getUsers() {
-    const response = await fetch(`http://localhost:8080/api/users`)
+    const response = await fetch(`${basePath}/users`)
         .catch(handleError);
     
     const users = await response.json();
@@ -21,34 +23,33 @@ export async function getUsers() {
 
 export async function postUser(username, email) {
 
-    const response = await fetch('http://localhost:8080/api/users', { 
+    const response = await fetch(`${basePath}/users`, { 
         method: 'POST', 
         body: JSON.stringify({ username, email }), 
         headers: {'Content-Type': 'application/json'}
       }).catch(handleError);
 
-    
     return response;
 
 }
 
 export async function getUserFavorites(id) {
-    const response = await fetch(`http://localhost:8080/api/users/${id}/musics`)
+    const response = await fetch(`${basePath}/users/${id}/musics`)
         .catch(handleError);
     
-    const userfavorites = await response.json();
+    const userfavorites = await response;
     return userfavorites;
 }
 
 export async function postFavorite(id, musicid) {
-
-    const response = await fetch(`http://localhost:8080/api/users/${id}/musics`, { 
+    console.log("Api" , id);
+    const response = await fetch(`${basePath}/users/${id}/musics`, { 
         method: 'POST', 
         body: JSON.stringify({ musicid }), 
         headers: {'Content-Type': 'application/json'}
       }).catch(handleError);
 
-    return response;
+    return response
 
 }
 
