@@ -6,12 +6,12 @@
 # install dependencies
 npm install
 
+# start the web api
+npm run client
+
 # serve with hot reload at localhost:8080
-npm start
+npm run client
 
 # build for production 
 npm run build
 
-# deploy to firebase services 
-npm run firebase-init
-npm run deploy# ubiwhere-challenge
