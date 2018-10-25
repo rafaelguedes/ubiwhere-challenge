@@ -4,8 +4,10 @@
   "description": "Ubiwhere challenge: React App that displays information about music",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open",
-    "build": "NODE_ENV='production' webpack -p"
+    "server": "node index.js",
+    "client": "webpack-dev-server --open",
+    "build": "NODE_ENV='production' webpack -p",
+    "heroku-postbuild": "npm install && npm run build"
   },
   "author": "Rafael Guedes",
   "license": "MIT",
@@ -47,6 +49,12 @@
     "react": "^16.0.0-alpha.5",
     "react-dom": "^16.0.0-alpha.5",
     "react-router-dom": "^4.0.0",
-    "whatwg-fetch": "^2.0.3"
+    "whatwg-fetch": "^2.0.3",
+    "body-parser": "^1.15.0",
+    "cors": "^2.7.1",
+    "express": "^4.13.4",
+    "fs": "0.0.2",
+    "lodash": "^4.6.1",
+    "node-uuid": "^1.4.7"
   }
 }
